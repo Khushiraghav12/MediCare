@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTech - Your Personal Health Companion</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <span class="logo-med">Med</span><span class="logo-tech">Tech</span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link active">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="chat.html" class="nav-link">Chat</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <button class="settings-btn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <a href="login.html" class="login-link">Login</a>
+                    <a href="login.html" class="signup-btn">Sign up</a>
+                    <div class="profile-container">
+                        <div class="profile-icon">
+                            <i class="fas fa-user"></i>
+                            <span class="notification-dot"></span>
+                        </div>
+                    </div>
+                    <div class="hamburger" id="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-sparkles"></i>
+                    <span>AI-Powered Healthcare</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Your Personal<br>
+                    <span class="gradient-text">Health Companion</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Transform your healthcare experience with AI-powered report analysis, 
+                    intelligent chat assistance, and personalized doctor recommendations.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="upload.html" class="btn btn-primary">
+                        <i class="fas fa-upload"></i>
+                        Get Started
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="chat.html" class="btn btn-secondary">
+                        <i class="fas fa-comments"></i>
+                        Try GARUN.ai
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-subtitle">
+                    Everything you need for comprehensive healthcare management
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon upload-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <h3 class="feature-title">Upload Reports</h3>
+                    <p class="feature-description">
+                        Upload your medical reports and get instant AI-powered analysis
+                    </p>
+                    <a href="upload.html" class="feature-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon chat-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="feature-title">GARUN.ai Chat</h3>
+                    <p class="feature-description">
+                        Chat with our AI assistant for personalized health insights
+                    </p>
+                    <a href="chat.html" class="feature-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon doctors-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Find Doctors</h3>
+                    <p class="feature-description">
+                        Discover healthcare providers near you with geolocation
+                    </p>
+                    <a href="doctors.html" class="feature-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Reports Analyzed</div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number">5K+</div>
+                    <div class="stat-label">Happy Users</div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Accuracy Rate</div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">AI Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Healthcare?</h2>
+                <p class="cta-description">
+                    Join thousands of users who trust MedTech for their health management needs.
+                </p>
+                <div class="cta-buttons">
+                    <a href="upload.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-bolt"></i>
+                        Start Your Journey
+                    </a>
+                    <a href="chat.html" class="btn btn-secondary btn-large">
+                        <i class="fas fa-comments"></i>
+                        Chat with AI
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-med">Med</span><span class="logo-tech">Tech</span>
+                </div>
+                <p class="footer-text">
+                    Your personal health companion powered by AI
+                </p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="login.html">Login</a>
+                    <a href="upload.html">Upload</a>
+                    <a href="chat.html">Chat</a>
+                    <a href="doctors.html">Doctors</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
