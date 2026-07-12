@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Doctors - MedTech</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/doctors.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <span class="logo-med">Med</span><span class="logo-tech">Tech</span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="chat.html" class="nav-link">Chat</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <button class="settings-btn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <a href="login.html" class="login-link">Login</a>
+                    <a href="login.html" class="signup-btn">Sign up</a>
+                    <div class="profile-container">
+                        <div class="profile-icon">
+                            <i class="fas fa-user"></i>
+                            <span class="notification-dot"></span>
+                        </div>
+                    </div>
+                    <div class="hamburger" id="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Doctors Page -->
+    <div class="doctors-page">
+        <div class="container">
+            <!-- Header -->
+            <div class="doctors-header">
+                <h1 class="doctors-title">Doctors near you</h1>
+                <p class="doctors-subtitle">
+                    Find qualified healthcare providers in your area
+                </p>
+            </div>
+
+            <!-- Location Status -->
+            <div class="location-status">
+                <div class="location-card">
+                    <div class="location-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="location-details">
+                            <p class="location-address" id="locationAddress">Getting your location...</p>
+                            <p class="location-count" id="locationCount">0 doctors found</p>
+                        </div>
+                    </div>
+                    <button class="update-location-btn" onclick="updateLocation()">
+                        <i class="fas fa-crosshairs"></i>
+                        Update
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="search-filters">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search doctors, specialties, or locations...">
+                    </div>
+
+                    <select id="specialtyFilter" class="filter-select">
+                        <option value="all">All Specialties</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="dermatology">Dermatology</option>
+                        <option value="neurology">Neurology</option>
+                        <option value="orthopedics">Orthopedics</option>
+                        <option value="pediatrics">Pediatrics</option>
+                        <option value="gynecology">Gynecology</option>
+                        <option value="psychiatry">Psychiatry</option>
+                        <option value="ophthalmology">Ophthalmology</option>
+                        <option value="ent">ENT</option>
+                    </select>
+
+                    <select id="sortFilter" class="filter-select">
+                        <option value="distance">Sort by Distance</option>
+                        <option value="rating">Sort by Rating</option>
+                        <option value="price">Sort by Price</option>
+                        <option value="availability">Sort by Availability</option>
+                    </select>
+
+                    <button class="filters-toggle-btn" onclick="toggleAdvancedFilters()">
+                        <i class="fas fa-filter"></i>
+                        Filters
+                        <i class="fas fa-chevron-down" id="filtersIcon"></i>
+                    </button>
+                </div>
+
+                <!-- Advanced Filters -->
+                <div class="advanced-filters" id="advancedFilters" style="display: none;">
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label>Price Range</label>
+                            <select id="priceFilter">
+                                <option value="all">Any Price</option>
+                                <option value="under-100">Under $100</option>
+                                <option value="100-150">$100 - $150</option>
+                                <option value="150-200">$150 - $200</option>
+                                <option value="over-200">Over $200</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Rating</label>
+                            <select id="ratingFilter">
+                                <option value="all">Any Rating</option>
+                                <option value="4.5+">4.5+ Stars</option>
+                                <option value="4.0+">4.0+ Stars</option>
+                                <option value="3.5+">3.5+ Stars</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Distance</label>
+                            <select id="distanceFilter">
+                                <option value="all">Any Distance</option>
+                                <option value="1">Within 1 mile</option>
+                                <option value="5">Within 5 miles</option>
+                                <option value="10">Within 10 miles</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-state" id="loadingState">
+                <div class="loading-spinner"></div>
+                <p>Finding doctors near you...</p>
+            </div>
+
+            <!-- Doctors List -->
+            <div class="doctors-list" id="doctorsList">
+                <!-- Doctors will be loaded here dynamically -->
+            </div>
+
+            <!-- No Results -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <div class="no-results-content">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>No doctors found</h3>
+                    <p>Try adjusting your search criteria or location</p>
+                    <button class="clear-filters-btn" onclick="clearAllFilters()">
+                        Clear Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/doctors.js"></script>
+</body>
+</html>
